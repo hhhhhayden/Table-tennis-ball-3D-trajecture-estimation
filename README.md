@@ -20,31 +20,41 @@ Once there are multiple cameras (at least two) and the corresponding L matrix is
 
 
 ![image](https://user-images.githubusercontent.com/33441535/168032044-41246ed0-9dab-4bf1-a4dc-d714fa73603b.png)
-    (5)
-Y=AX                           (6)
+
+(5)Y=AX                   
+
+(6)
 
 
 ![image](https://user-images.githubusercontent.com/33441535/168032061-5129ee11-f417-492f-a607-e93ac7849813.png)
-  (7)
+
+(7)
 
 This experiment first uses Hough map detection to convert the dual-camera color channel to the Hough channel, so that the position of the sphere can still be grasped under high-speed motion. Then use the DLT linear transformation correction to calculate the ball’s 3D coordinates.
 Figure 1 shows the position of the TT ball identified by color, which is suitable for static ball coordinate identification. Figure 2 shows the position of the TT ball identified by Hough diagram, which is suitable for dynamic ball coordinate identification. The camera can still capture ball position under high-speed motion. The camera specification used for this study is Logitech StreamCamFull HD 1080P/60FPS.
 ![image](https://user-images.githubusercontent.com/33441535/168032110-b0ab4d5a-0c76-4057-a6cd-14ed7980956d.png)
  
 Fig. 1. Pool positions identified by color (static)
+
 ![image](https://user-images.githubusercontent.com/33441535/168032131-75cf2adb-a882-480f-836a-868928e3d698.png)
   
 Fig. 2. The position of the billiards identified by the Hough diagram (dynamic)
+
 ![image](https://user-images.githubusercontent.com/33441535/168032171-cfc3986b-085a-402e-8ba2-07114425653d.png)
+
 ![image](https://user-images.githubusercontent.com/33441535/168032185-0d9c9744-0c50-453a-9d65-23fe79731621.png)
     
 Fig. 3 dual-camera stereo DLT calibration result.
 Figure 3 shows the dual-camera stereo DLT calibration setting environment, including a calibration board and dual cameras. There are about 2~300 known 3D coordinate points on the calibration board. The calibrated 3D coordinates of the checker board after DLT calculation are shown on the right in Figure 3.
+
 ![image](https://user-images.githubusercontent.com/33441535/168032247-69c84787-345c-4dd8-99cb-b3421e45437b.png)
+
 ![image](https://user-images.githubusercontent.com/33441535/168032261-9b9165e8-251d-4c5d-8bd9-c8c116a18d21.png)
   
 Fig. 4
+
 ![image](https://user-images.githubusercontent.com/33441535/168032282-21a32c80-047a-4179-8cc9-cb1e83be6ed4.png)
+
 ![image](https://user-images.githubusercontent.com/33441535/168032300-752a99cd-4e13-433f-b1cd-f7ef9d1a4e74.png)
    
 Fig. 5
