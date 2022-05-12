@@ -1,19 +1,29 @@
 # Table-tennis-ball-3D-trajecture-estimation
 This repo makes use of twin regular network camera for 3D table tennis trajectory calculation.  We first calibrate the twin cameras using a DLT(Direct Linear Transformation) method for ball’s 3D coordinates derivation.  Then, we applied a vision algorithms to grab the 2D ball centers synchronously.  Finally, a 3D trajectory is synthesized and visualized.  The following introduces the DLT calculation process.
 DLT is the abbreviation of direct linear transformation, which is mainly used for stereo correction of multiple cameras. The relationship is shown in (1). When the corresponding point exceeds 6, it is written in matrix form as in formula (2), u1, v1 to uN, vN represent N corresponding image coordinates, and the corresponding 3-dimensional coordinates are x1, y1, z1 to xN ,yN,zN. The L value is the L value of formula (1), N>6.
- (1)![image](https://user-images.githubusercontent.com/33441535/168031943-3ed5e03b-7af9-4758-a319-4275583c898f.png)
+ (1)
+ 
+ ![image](https://user-images.githubusercontent.com/33441535/168031943-3ed5e03b-7af9-4758-a319-4275583c898f.png)
 
- (2)![image](https://user-images.githubusercontent.com/33441535/168031960-031c6efb-4f9d-4bb7-b073-ea73724b5843.png)
+ (2)
+ 
+ ![image](https://user-images.githubusercontent.com/33441535/168031960-031c6efb-4f9d-4bb7-b073-ea73724b5843.png)
 
 Equation (2) can be simplified by Equation (3), and L is solved by the least square difference of Equation (3), where U represents the left side of the equal sign, and L represents the matrix of L1~L11.
 U=AL                                 (3)
 Equation (3) can be simplified by Equation (4), and L is solved by the least square difference of Equation (4), where U represents the left side of the equal sign, and L represents the matrix of L1~L11.
+
+
 ![image](https://user-images.githubusercontent.com/33441535/168032004-46d093b1-4e65-4a74-84cc-32817f34f540.png)
           (4)
 Once there are multiple cameras (at least two) and the corresponding L matrix is solved, the corresponding estimation (x, y, z) can be represented by equation (5), which is shown in equation (6) after simplification. At this time, u, v represent the coordinates of the object captured by multiple cameras, such as the center of the ball, etc. The different u, v values in individual cameras are brought into the L value of different cameras. Formula (5) is the same as the prediction. The relationship between 3-dimensional coordinates. Equation (7) uses the least squares sum to calculate the predicted (x, y, z) coordinates. If more cameras are used in this type, the accuracy will be improved.
+
+
 ![image](https://user-images.githubusercontent.com/33441535/168032044-41246ed0-9dab-4bf1-a4dc-d714fa73603b.png)
     (5)
 Y=AX                           (6)
+
+
 ![image](https://user-images.githubusercontent.com/33441535/168032061-5129ee11-f417-492f-a607-e93ac7849813.png)
   (7)
 
