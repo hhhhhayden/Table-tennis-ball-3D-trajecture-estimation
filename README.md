@@ -1,5 +1,5 @@
 # Table-tennis-ball-3D-trajecture-estimation
-This repo makes use of twin regular network camera for 3D table tennis trajectory calculation.  We first calibrate the twin cameras using a DLT(Direct Linear Transformation) method for ball’s 3D coordinates derivation.  Then, we applied a vision algorithms to grab the 2D ball centers synchronously.  Finally, a 3D trajectory is synthesized and visualized.  The following introduces the DLT calculation process.
+This report makes use of twin regular network camera for 3D table tennis trajectory calculation.  We first calibrate the twin cameras using a DLT(Direct Linear Transformation) method for ball’s 3D coordinates derivation.  Then, we applied a vision algorithms to grab the 2D ball centers synchronously.  Finally, a 3D trajectory is synthesized and visualized.  The following introduces the DLT calculation process.
 DLT is the abbreviation of direct linear transformation, which is mainly used for stereo correction of multiple cameras. The relationship is shown in (1). When the corresponding point exceeds 6, it is written in matrix form as in formula (2), u1, v1 to uN, vN represent N corresponding image coordinates, and the corresponding 3-dimensional coordinates are x1, y1, z1 to xN ,yN,zN. The L value is the L value of formula (1), N>6.
  (1)
  
